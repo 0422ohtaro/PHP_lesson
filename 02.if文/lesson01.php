@@ -13,9 +13,9 @@
 
 $number = 51;
 
-// $number = 55;
-// $number = 45;
+// $number = 49;
 // $number = 50;
+// $number = 51;
 
 if($number > 50){
     echo '50より大きい';
