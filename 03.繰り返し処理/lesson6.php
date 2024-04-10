@@ -20,6 +20,7 @@ $arr = [
     'r3' => ['c1' => 25, 'c2' => 9, 'c3' => 130]
 ];
 ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -32,26 +33,23 @@ table {
 }
 th, td {
     border:1px solid #000;
+    padding: 5px;
 }
 </style>
 </head>
 <body>
+
     <?php
-
-$data = [
-    ['c1' => 10, 'c2' => 5, 'c3' => 20],
-    ['c1' => 7, 'c2' => 8, 'c3' => 12],
-    ['c1' => 25, 'c2' => 9, 'c3' => 130],
-];
-
+    $data = array_values($arr);
 
     echo '<table>';
-    echo'<tr><th></th>';
-    foreach($data[0] as $key => $value){
-        echo '<th>'.$key.'</th>';
+
+    echo '<tr><th></th>';
+    foreach (array_keys($data[0]) as $key) {
+        echo '<th>' . $key . '</th>';
     }
     echo '<th>横合計</th></tr>';
-    
+
     $totalVertical = 0;
     foreach ($data as $rowKey => $row) {
         echo '<tr>';
@@ -61,24 +59,21 @@ $data = [
             echo '<td>' . $cell . '</td>';
             $totalRow += $cell;
         }
-    
         echo '<td>' . $totalRow . '</td>';
         echo '</tr>';
         $totalVertical += $totalRow;
     }
 
     echo '<tr><th>縦合計</th>';
-foreach ($data[0] as $key => $value) {
-    $totalColumn = 0;
-    foreach ($data as $row) {
-        $totalColumn += $row[$key];
+    foreach (array_keys($data[0]) as $key) {
+        $totalColumn = array_sum(array_column($data, $key));
+        echo '<td>' . $totalColumn . '</td>';
     }
-    echo '<td>' . $totalColumn . '</td>';
-}
-echo '<td>' . $totalVertical . '</td></tr>';
+    echo '<td>' . $totalVertical . '</td></tr>';
 
-echo '</table>';
-    
+    echo '</table>';
+    echo '</body>';
+    echo '</html>';
     ?>
 </body>
 </html>

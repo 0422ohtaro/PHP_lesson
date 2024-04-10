@@ -21,13 +21,13 @@ $arr = [99, 3, 12, 45, 60, 100, 31, 7, 28];
 
 $arr = [99, 3, 12, 45, 60, 100, 31, 7, 28];
 
-$length=count($arr);
-for($i=0;$i<$length-1;$i++){
-    for($j=0;$j<$length-$i-1;$j++){
-        if($arr[$j]>$arr[$j+1]){
-            $swap=$arr[$j];
-            $arr[$j]=$arr[$j+1];
-            $arr[$j+1]=$swap;
+$length = count($arr) ;
+for($i = 0; $i < $length -1; $i++){
+    for($j = 0; $j < $length -$i -1; $j++){
+        if($arr[$j] > $arr[$j +1]){
+            $swap = $arr[$j];
+            $arr[$j] = $arr[$j+1];
+            $arr[$j+1] = $swap;
         }
     }
 }
