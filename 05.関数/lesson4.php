@@ -19,7 +19,7 @@
 // 50円足りません。
 
 $yen = 10000;   // 購入金額
-$product = 15000; // 商品金額
+$product = 1000; // 商品金額
 
 function calc($yen, $product) {
     $change = $yen - $product;
@@ -27,21 +27,28 @@ function calc($yen, $product) {
     $moneyName = ['10000円札', '5000円札', '1000円札', '500円玉', '100円玉', '50円玉', '10円玉', '5円玉', '1円玉'];
     $result = '';
 
+    $index = array_search($yen, $money);
+    if ($index !== false) {
+        $result .= $moneyName[$index];
+    } else {
+        $result .= 'その他';
+    }
+
+    $result .= 'で購入した場合、<br>';
+
     if ($change < 0){
-        return abs($change) . '円足りません。';
+        return $result . abs($change) . '円足りません。';
     }
 
     foreach ($money as $index => $coin){
         $count = floor($change / $coin);
         $change -= $count * $coin;
-        if ($count > 0){
-            $result .= $moneyName[$index] . 'x' . $count . '枚、';
+        $result .= $moneyName[$index] . 'x' . $count . '枚、';
         }
-    }
     $result = rtrim($result, '、');
     return $result;
-}
 
+    }
 ?>
 <!DOCTYPE html>
 <html lang="ja">

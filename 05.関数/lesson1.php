@@ -6,8 +6,6 @@ function convertThreeTimes($number){
     return $number*3;
 }
 
-
-
 echo convertThreeTimes(5);
 // 15
 

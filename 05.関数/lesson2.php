@@ -11,14 +11,11 @@
 // ・2020年元旦から現在までの経過日数 (ddd日)
 
 date_default_timezone_set('Asia/Tokyo');
-$currentTime=date('Y年m月d日');
-$week_name=['日','月','火','水','木','金','土'];
-$week=date('w');
+$currentTime = date('Y年m月d日');
+$week_name = ['日','月','火','水','木','金','土'];
+$week = date('w');
 echo "・現在日時($currentTime($week_name[$week]曜日))";
 echo '<br>';
-?>
-
-<?php
 
 date_default_timezone_set('Asia/Tokyo');
 
@@ -28,11 +25,6 @@ $currentDateTime -> modify('+3 days');
 $formattedDateTime = $currentDateTime -> format('Y年m月d日 H時i分s秒');
 echo "・3日後の日時($formattedDateTime)" . '<br>';
 
-
-?>
-
-
-<?php
 date_default_timezone_set('Asia/Tokyo');
 
 $currentDateTime = new DateTime();
@@ -40,10 +32,6 @@ $currentDateTime -> modify('-12 hours');
 
 $formattedDateTime = $currentDateTime -> format('Y年m月d日 H時i分s秒');
 echo "・12時間前の日時($formattedDateTime)" . '<br>';
-
-?>
-
-<?php
 
 $start = new DateTime('2020-01-01');
 
