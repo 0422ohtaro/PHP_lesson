@@ -24,11 +24,11 @@ class Person {
         $this->gender = $gender;
     }
     public function selfIntroduction(){
-        return '私の名前は' . $this -> name . "です。年齢は" . $this -> age . "歳です。性別は" . $this -> gender ."です。";
+        return '私の名前は' . $this->name . "です。年齢は" . $this->age . "歳です。性別は" . $this->gender ."です。";
     }
 
     public function addAge(){
-        $this -> age++;
+        $this->age++;
         return "誕生日が来ました。";
     }
 }
@@ -39,10 +39,10 @@ class Person {
 
 $person = new Person("ohtaro", 36, "men");
 
-echo $person -> selfIntroduction() . "<br>";
+echo $person->selfIntroduction() . "<br>";
 
-echo $person -> addAge() . "<br>";
+echo $person->addAge() . "<br>";
 
-echo $person -> selfIntroduction() . "<br>";
+echo $person->selfIntroduction() . "<br>";
 
 ?>
